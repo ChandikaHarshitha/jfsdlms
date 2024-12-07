@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Manage Users</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         background: linear-gradient(to bottom right, #74ebd5, #9face6);
+         color: #333;
+      }
+      .header {
+         background-color: #4a4e69;
+         padding: 1rem 2rem;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .header .logo {
+         color: #fff;
+         font-size: 1.5rem;
+         font-weight: bold;
+         text-decoration: none;
+      }
+      .users {
+         padding: 2rem;
+      }
+      .users .heading {
+         font-size: 2rem;
+         color: #4a4e69;
+         text-align: center;
+         margin-bottom: 1.5rem;
+      }
+      table {
+         width: 100%;
+         border-collapse: collapse;
+         background: #fff;
+         border-radius: 10px;
+         overflow: hidden;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      table thead {
+         background: #6a11cb;
+         color: #fff;
+      }
+      table th, table td {
+         text-align: left;
+         padding: 1rem;
+         border-bottom: 1px solid #f0f0f0;
+      }
+      table tbody tr:last-child td {
+         border-bottom: none;
+      }
+      table tbody tr:hover {
+         background: #f9f9f9;
+      }
+      .btn {
+         padding: 0.5rem 1rem;
+         border: none;
+         border-radius: 5px;
+         font-size: 0.9rem;
+         cursor: pointer;
+         transition: background-color 0.3s ease-in-out;
+      }
+      .btn.edit {
+         background: #4caf50;
+         color: #fff;
+      }
+      .btn.edit:hover {
+         background: #45a049;
+      }
+      .btn.delete {
+         background: #f44336;
+         color: #fff;
+         margin-left: 0.5rem;
+      }
+      .btn.delete:hover {
+         background: #e53935;
+      }
+      .footer {
+         text-align: center;
+         padding: 1rem;
+         background-color: #4a4e69;
+         color: #fff;
+         margin-top: 2rem;
+      }
+      @media (max-width: 768px) {
+         table th, table td {
+            padding: 0.8rem;
+            font-size: 0.9rem;
+         }
+         .btn {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+         }
+      }
+   </style>
+</head>
+<body>
+<header class="header">
+   <a href="admin-dashboard.html" class="logo">Admin Panel</a>
+</header>
+<section class="users">
+   <h1 class="heading">Manage Users</h1>
+   <table>
+      <thead>
+         <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+         </tr>
+      </thead>
+      <tbody id="userTable">
+         <tr>
+            <td>1</td>
+            <td>Swetha Menon</td>
+            <td>swetha.menon@gmail.com</td>
+            <td>Student</td>
+            <td>
+               <button class="btn edit" onclick="editUser(1)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(1)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>2</td>
+            <td>Jahnavi</td>
+            <td>jahnavi@gmail.com</td>
+            <td>Teacher</td>
+            <td>
+               <button class="btn edit" onclick="editUser(2)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(2)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>3</td>
+            <td>Ashwin Kumar</td>
+            <td>ashwin.kumar@gmail.com</td>
+            <td>Student</td>
+            <td>
+               <button class="btn edit" onclick="editUser(3)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(3)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>4</td>
+            <td>Ananya Reddy</td>
+            <td>ananya.reddy@gmail.com</td>
+            <td>Teacher</td>
+            <td>
+               <button class="btn edit" onclick="editUser(4)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(4)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>5</td>
+            <td>Rajesh Patel</td>
+            <td>rajesh.patel@gmail.com</td>
+            <td>Student</td>
+            <td>
+               <button class="btn edit" onclick="editUser(5)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(5)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>6</td>
+            <td>Ravi Shankar</td>
+            <td>ravi.shankar@gmail.com</td>
+            <td>Teacher</td>
+            <td>
+               <button class="btn edit" onclick="editUser(6)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(6)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>7</td>
+            <td>Divya Nair</td>
+            <td>divya.nair@gmail.com</td>
+            <td>Student</td>
+            <td>
+               <button class="btn edit" onclick="editUser(7)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(7)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>8</td>
+            <td>Meera Iyer</td>
+            <td>meera.iyer@gmail.com</td>
+            <td>Teacher</td>
+            <td>
+               <button class="btn edit" onclick="editUser(8)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(8)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>9</td>
+            <td>Sarita Verma</td>
+            <td>saritaverma@gmail.com</td>
+            <td>Student</td>
+            <td>
+               <button class="btn edit" onclick="editUser(9)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(9)">Delete</button>
+            </td>
+         </tr>
+         <tr>
+            <td>10</td>
+            <td>Karthik Reddy</td>
+            <td>karthik.reddy@gmail.com</td>
+            <td>Teacher</td>
+            <td>
+               <button class="btn edit" onclick="editUser(10)">Edit</button>
+               <button class="btn delete" onclick="deleteUser(10)">Delete</button>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</section>
+<footer class="footer">Admin Panel &copy; 2024</footer>
+<script>
+   // Example function to handle edit button
+   function editUser(userId) {
+      alert(`Edit user with ID: ${userId}`);
+      // Add code to handle the edit logic
+   }
+
+   // Example function to handle delete button
+   function deleteUser(userId) {
+      if (confirm(`Are you sure you want to delete user with ID: ${userId}?`)) {
+         const row = document.querySelector(`#userTable tr:nth-child(${userId})`);
+         if (row) row.remove();
+      }
+   }
+</script>
+</body>
+</html>

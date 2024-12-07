@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Feedback</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         margin: 0;
+         background: linear-gradient(to right, #f39c12, #f1c40f);
+         color: #333;
+      }
+      .header {
+         background-color: #34495e;
+         padding: 1rem 2rem;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+      .header .logo {
+         color: #fff;
+         font-size: 1.5rem;
+         font-weight: bold;
+         text-decoration: none;
+      }
+      .feedback {
+         padding: 2rem;
+      }
+      .feedback .heading {
+         font-size: 2rem;
+         color: #34495e;
+         text-align: center;
+         margin-bottom: 1.5rem;
+      }
+      .feedback-container {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 1rem;
+         justify-content: center;
+      }
+      .feedback-box {
+         background: #fff;
+         border-radius: 10px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         padding: 1.5rem;
+         width: 300px;
+         position: relative;
+         text-align: left;
+      }
+      .feedback-box p {
+         margin: 0.5rem 0;
+         font-size: 1rem;
+      }
+      .feedback-box .btn-group {
+         display: flex;
+         justify-content: space-between;
+         margin-top: 1rem;
+      }
+      .btn {
+         padding: 0.5rem 1rem;
+         border: none;
+         border-radius: 5px;
+         font-size: 0.9rem;
+         cursor: pointer;
+         transition: background-color 0.3s ease-in-out;
+      }
+      .btn.respond {
+         background: #3498db;
+         color: #fff;
+      }
+      .btn.respond:hover {
+         background: #2980b9;
+      }
+      .btn.delete {
+         background: #e74c3c;
+         color: #fff;
+      }
+      .btn.delete:hover {
+         background: #c0392b;
+      }
+      .emoji-container {
+         display: none;
+         margin-top: 1rem;
+         font-size: 1.5rem;
+         text-align: center;
+      }
+      .footer {
+         text-align: center;
+         padding: 1rem;
+         background-color: #34495e;
+         color: #fff;
+         margin-top: 2rem;
+      }
+      @media (max-width: 768px) {
+         .feedback-box {
+            width: 90%;
+         }
+         .btn {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem;
+         }
+      }
+   </style>
+</head>
+<body>
+<header class="header">
+   <a href="admin-dashboard.html" class="logo">Admin Panel</a>
+</header>
+<section class="feedback">
+   <h1 class="heading">Feedback</h1>
+   <div class="feedback-container" id="feedbackContainer">
+      <div class="feedback-box" id="feedback1">
+         <p><strong>User:</strong> Sahithi</p>
+         <p><strong>Feedback:</strong> Great platform!</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback1')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback1')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer1">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback2">
+         <p><strong>User:</strong> Chaitu</p>
+         <p><strong>Feedback:</strong> Loved the new features!</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback2')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback2')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer2">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback3">
+         <p><strong>User:</strong> Lucky</p>
+         <p><strong>Feedback:</strong> Could use some improvements.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback3')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback3')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer3">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback4">
+         <p><strong>User:</strong> Ravi</p>
+         <p><strong>Feedback:</strong> The UI could be more intuitive.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback4')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback4')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer4">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback5">
+         <p><strong>User:</strong> Priya</p>
+         <p><strong>Feedback:</strong> Awesome service, highly recommend!</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback5')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback5')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer5">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback6">
+         <p><strong>User:</strong> Anil</p>
+         <p><strong>Feedback:</strong> Great but needs more tutorial content.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback6')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback6')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer6">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback7">
+         <p><strong>User:</strong> Sita</p>
+         <p><strong>Feedback:</strong> The app works smoothly. Keep it up!</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback7')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback7')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer7">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback8">
+         <p><strong>User:</strong> John</p>
+         <p><strong>Feedback:</strong> The platform is a bit slow at times.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback8')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback8')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer8">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback9">
+         <p><strong>User:</strong> Kiran</p>
+         <p><strong>Feedback:</strong> Would be better if there's an offline mode.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback9')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback9')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer9">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback10">
+         <p><strong>User:</strong> Rajesh</p>
+         <p><strong>Feedback:</strong> Everything works fine, but I would love some more customization options.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback10')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback10')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer10">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback11">
+         <p><strong>User:</strong> Maya</p>
+         <p><strong>Feedback:</strong> Excellent user experience. Would love to see more updates.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback11')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback11')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer11">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+      <div class="feedback-box" id="feedback12">
+         <p><strong>User:</strong> Arun</p>
+         <p><strong>Feedback:</strong> The navigation needs to be improved for better accessibility.</p>
+         <div class="btn-group">
+            <button class="btn respond" onclick="toggleEmojis('feedback12')">Respond</button>
+            <button class="btn delete" onclick="deleteFeedback('feedback12')">Delete</button>
+         </div>
+         <div class="emoji-container" id="emojiContainer12">
+            😄 😍 🤩 👍
+         </div>
+      </div>
+   </div>
+</section>
+<footer class="footer">
+   <p>&copy; 2024 Your Company. All rights reserved.</p>
+</footer>
+<script>
+   function toggleEmojis(feedbackId) {
+      const emojiContainer = document.getElementById('emojiContainer' + feedbackId.charAt(feedbackId.length - 1));
+      emojiContainer.style.display = emojiContainer.style.display === 'block' ? 'none' : 'block';
+   }
+
+   function deleteFeedback(feedbackId) {
+      const feedbackBox = document.getElementById(feedbackId);
+      feedbackBox.remove();
+   }
+</script>
+</body>
+</html>

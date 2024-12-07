@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>All Scores - View Scores</title>
+
+   <!-- Font Awesome CDN link for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- Custom CSS for styling -->
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f5f5f5;
+      }
+
+      header {
+         background-color: #4CAF50;
+         color: white;
+         padding: 20px 0;
+         text-align: center;
+      }
+
+      header h1 {
+         margin: 0;
+      }
+
+      .scores-container {
+         width: 90%;
+         margin: 30px auto;
+         padding: 20px;
+         background-color: white;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         border-radius: 8px;
+      }
+
+      .scores-container h2 {
+         text-align: center;
+         color: #4CAF50;
+      }
+
+      table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 20px;
+      }
+
+      th, td {
+         padding: 12px;
+         text-align: center;
+         border: 1px solid #ddd;
+      }
+
+      th {
+         background-color: #f2f2f2;
+         color: #333;
+         font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+         background-color: #fafafa;
+      }
+
+      tr:hover {
+         background-color: #f1f1f1;
+      }
+
+      .student-name {
+         font-weight: bold;
+         color: #333;
+      }
+
+      .score {
+         font-weight: bold;
+         color: #4CAF50;
+      }
+
+      .pagination {
+         display: flex;
+         justify-content: center;
+         margin-top: 20px;
+      }
+
+      .pagination a {
+         padding: 10px 15px;
+         margin: 0 5px;
+         background-color: #4CAF50;
+         color: white;
+         text-decoration: none;
+         border-radius: 5px;
+         transition: background-color 0.3s;
+      }
+
+      .pagination a:hover {
+         background-color: #45a049;
+      }
+
+      footer {
+         background-color: #4CAF50;
+         color: white;
+         padding: 10px;
+         text-align: center;
+         position: fixed;
+         width: 100%;
+         bottom: 0;
+      }
+   </style>
+</head>
+<body>
+
+<header>
+   <h1>View All Student Scores</h1>
+</header>
+
+<div class="scores-container">
+
+   <h2>All Students Scores</h2>
+
+   <table>
+      <thead>
+         <tr>
+            <th class="rank">Rank</th>
+            <th class="student-name">Student Name</th>
+            <th class="score">Score</th>
+            <th class="action">Action</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>1</td>
+            <td class="student-name">Charlie</td>
+            <td class="score">98</td>
+            <td><a href="view-details.html?student=1" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>2</td>
+            <td class="student-name">Rajesh</td>
+            <td class="score">95</td>
+            <td><a href="view-details.html?student=2" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>3</td>
+            <td class="student-name">Swetha</td>
+            <td class="score">92</td>
+            <td><a href="view-details.html?student=3" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>4</td>
+            <td class="student-name">Jahnavi</td>
+            <td class="score">89</td>
+            <td><a href="view-details.html?student=4" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>5</td>
+            <td class="student-name">Vidya</td>
+            <td class="score">88</td>
+            <td><a href="view-details.html?student=5" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>6</td>
+            <td class="student-name">Siri</td>
+            <td class="score">85</td>
+            <td><a href="view-details.html?student=6" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>7</td>
+            <td class="student-name">Chaitu</td>
+            <td class="score">82</td>
+            <td><a href="view-details.html?student=7" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>8</td>
+            <td class="student-name">Sravya</td>
+            <td class="score">80</td>
+            <td><a href="view-details.html?student=8" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>9</td>
+            <td class="student-name">Ravi</td>
+            <td class="score">78</td>
+            <td><a href="view-details.html?student=9" class="btn-details">View Details</a></td>
+         </tr>
+         <tr>
+            <td>10</td>
+            <td class="student-name">Kiran</td>
+            <td class="score">75</td>
+            <td><a href="view-details.html?student=10" class="btn-details">View Details</a></td>
+         </tr>
+      </tbody>
+   </table>
+
+   <div class="pagination">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">Next</a>
+   </div>
+
+</div>
+
+<footer>
+   &copy; 2024 All Rights Reserved | View All Scores
+</footer>
+
+</body>
+</html>

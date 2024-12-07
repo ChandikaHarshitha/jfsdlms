@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Edit Assessment</title>
+
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- Custom CSS -->
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Arial', sans-serif;
+      }
+
+      body {
+         background-color: #f9f9f9;
+         color: #333;
+         padding: 20px;
+      }
+
+      h1 {
+         text-align: center;
+         font-weight: 500;
+         color: #2c3e50;
+         margin-bottom: 20px;
+      }
+
+      .form-container {
+         max-width: 600px;
+         margin: 0 auto;
+         background-color: #fff;
+         padding: 20px;
+         border-radius: 6px;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container form input,
+      .form-container form textarea,
+      .form-container form button {
+         width: 100%;
+         padding: 10px;
+         margin-bottom: 15px;
+         border: 1px solid #ddd;
+         border-radius: 4px;
+         font-size: 1rem;
+      }
+
+      .form-container form button {
+         background-color: #3498db;
+         color: #fff;
+         border: none;
+         cursor: pointer;
+         font-weight: bold;
+         transition: background-color 0.3s;
+      }
+
+      .form-container form button:hover {
+         background-color: #2980b9;
+      }
+   </style>
+</head>
+<body>
+   <h1>Edit Assessment</h1>
+   <div class="form-container">
+      <form action="update-assessment.php" method="post">
+         <!-- Hidden field for assessment ID -->
+         <input type="hidden" name="id" value="<!-- PHP code to insert assessment ID -->">
+
+         <label for="title">Assessment Title</label>
+         <input type="text" name="title" id="title" placeholder="Enter title" value="<!-- PHP code to insert title -->" required>
+
+         <label for="description">Assessment Description</label>
+         <textarea name="description" id="description" placeholder="Enter description" rows="4" required><!-- PHP code to insert description --></textarea>
+
+         <label for="date">Assessment Date</label>
+         <input type="date" name="date" id="date" value="<!-- PHP code to insert date -->" required>
+
+         <button type="submit">Update Assessment</button>
+      </form>
+   </div>
+</body>
+</html>

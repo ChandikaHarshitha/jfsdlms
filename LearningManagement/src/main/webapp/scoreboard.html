@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Scoreboard</title>
+
+   <!-- Font Awesome CDN link for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- Custom CSS for styling the scoreboard -->
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f4f7fc;
+      }
+
+      header {
+         background-color: #4CAF50;
+         color: white;
+         padding: 15px;
+         text-align: center;
+      }
+
+      header h1 {
+         margin: 0;
+      }
+
+      .scoreboard-container {
+         max-width: 900px;
+         margin: 30px auto;
+         padding: 20px;
+         background-color: white;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         border-radius: 8px;
+      }
+
+      .scoreboard-container table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-bottom: 20px;
+      }
+
+      .scoreboard-container th, .scoreboard-container td {
+         padding: 12px;
+         text-align: center;
+         border: 1px solid #ddd;
+      }
+
+      .scoreboard-container th {
+         background-color: #f2f2f2;
+         font-weight: bold;
+      }
+
+      .scoreboard-container tr:nth-child(even) {
+         background-color: #f9f9f9;
+      }
+
+      .scoreboard-container tr:hover {
+         background-color: #f1f1f1;
+      }
+
+      .scoreboard-container .rank {
+         font-size: 18px;
+         font-weight: bold;
+         color: #4CAF50;
+      }
+
+      .scoreboard-container .student-name {
+         font-size: 16px;
+         color: #333;
+      }
+
+      .scoreboard-container .score {
+         font-size: 16px;
+         color: #333;
+         font-weight: bold;
+      }
+
+      footer {
+         background-color: #4CAF50;
+         color: white;
+         padding: 10px;
+         text-align: center;
+         position: fixed;
+         width: 100%;
+         bottom: 0;
+      }
+
+      .btn-view {
+         display: inline-block;
+         padding: 10px 20px;
+         background-color: #4CAF50;
+         color: white;
+         text-decoration: none;
+         border-radius: 5px;
+         font-size: 16px;
+         transition: background-color 0.3s;
+      }
+
+      .btn-view:hover {
+         background-color: #45a049;
+      }
+   </style>
+</head>
+<body>
+
+<header>
+   <h1>Student Scoreboard</h1>
+</header>
+
+<div class="scoreboard-container">
+
+   <h2 style="text-align: center; color: #4CAF50;">Top 10 Students</h2>
+
+   <table>
+      <thead>
+         <tr>
+            <th class="rank">Rank</th>
+            <th class="student-name">Student Name</th>
+            <th class="score">Score</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>1</td>
+            <td>Charlie</td>
+            <td>98</td>
+         </tr>
+         <tr>
+            <td>2</td>
+            <td>Rajesh</td>
+            <td>95</td>
+         </tr>
+         <tr>
+            <td>3</td>
+            <td>Swetha</td>
+            <td>92</td>
+         </tr>
+         <tr>
+            <td>4</td>
+            <td>Jahnavi</td>
+            <td>89</td>
+         </tr>
+         <tr>
+            <td>5</td>
+            <td>Vidya</td>
+            <td>88</td>
+         </tr>
+         <tr>
+            <td>6</td>
+            <td>Siri</td>
+            <td>85</td>
+         </tr>
+         <tr>
+            <td>7</td>
+            <td>Chaitu</td>
+            <td>82</td>
+         </tr>
+         <tr>
+            <td>8</td>
+            <td>Sravya</td>
+            <td>80</td>
+         </tr>
+         <tr>
+            <td>9</td>
+            <td>Ravi</td>
+            <td>78</td>
+         </tr>
+         <tr>
+            <td>10</td>
+            <td>Kiran</td>
+            <td>75</td>
+         </tr>
+      </tbody>
+   </table>
+
+   <div style="text-align: center;">
+      <a href="view-all-scores.html" class="btn-view">View All Scores</a>
+   </div>
+   
+</div>
+
+<footer>
+   &copy; 2024 Student Scoreboard | All Rights Reserved
+</footer>
+
+</body>
+</html>

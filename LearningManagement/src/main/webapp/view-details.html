@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Student Details</title>
+
+   <!-- Font Awesome CDN link for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- Chart.js CDN -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+   <!-- Custom CSS for styling -->
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f5f5f5;
+      }
+
+      header {
+         background-color: #4CAF50;
+         color: white;
+         padding: 20px 0;
+         text-align: center;
+      }
+
+      header h1 {
+         margin: 0;
+      }
+
+      .student-details-container {
+         width: 90%;
+         margin: 30px auto;
+         padding: 30px;
+         background-color: white;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         border-radius: 8px;
+      }
+
+      .student-details-container h2 {
+         text-align: center;
+         color: #4CAF50;
+      }
+
+      .student-info {
+         display: flex;
+         justify-content: space-between;
+         margin-top: 20px;
+         padding: 15px;
+         background-color: #f9f9f9;
+         border-radius: 8px;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .student-info div {
+         width: 45%;
+      }
+
+      .student-info h3 {
+         color: #333;
+         margin-bottom: 10px;
+      }
+
+      .student-info p {
+         font-size: 1.1em;
+         color: #555;
+      }
+
+      .student-scores {
+         margin-top: 40px;
+         text-align: center;
+      }
+
+      .score-table {
+         width: 80%;
+         margin: 0 auto;
+         border-collapse: collapse;
+         background-color: #f9f9f9;
+         border-radius: 8px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .score-table th, .score-table td {
+         padding: 12px;
+         text-align: center;
+         border: 1px solid #ddd;
+      }
+
+      .score-table th {
+         background-color: #4CAF50;
+         color: white;
+      }
+
+      .score-table tr:nth-child(even) {
+         background-color: #fafafa;
+      }
+
+      .score-table tr:hover {
+         background-color: #f1f1f1;
+      }
+
+      .back-btn {
+         display: block;
+         margin: 20px auto;
+         padding: 12px 25px;
+         background-color: #4CAF50;
+         color: white;
+         text-decoration: none;
+         font-size: 1.1em;
+         text-align: center;
+         border-radius: 5px;
+         transition: background-color 0.3s;
+      }
+
+      .back-btn:hover {
+         background-color: #45a049;
+      }
+
+      footer {
+         background-color: #4CAF50;
+         color: white;
+         padding: 10px;
+         text-align: center;
+         position: fixed;
+         width: 100%;
+         bottom: 0;
+      }
+
+      /* Container for the Pie Chart */
+      .chart-container {
+         width: 80%;
+         margin: 40px auto;
+         text-align: center;
+      }
+
+   </style>
+</head>
+<body>
+
+<header>
+   <h1>Student Details</h1>
+</header>
+
+<div class="student-details-container">
+
+   <!-- Student Information Section -->
+   <h2>Details of Student: Charlie</h2>
+
+   <div class="student-info">
+      <div>
+         <h3>Personal Information</h3>
+         <p><strong>Name:</strong> Charlie</p>
+         <p><strong>Age:</strong> 20</p>
+         <p><strong>Email:</strong> charlie@gmail.com</p>
+         <p><strong>Course:</strong> Computer Science</p>
+      </div>
+
+      <div>
+         <h3>Performance</h3>
+         <p><strong>Grade:</strong> A</p>
+         <p><strong>Rank:</strong> 1</p>
+         <p><strong>Overall Score:</strong> 98%</p>
+         <p><strong>Remarks:</strong> Excellent performance!</p>
+      </div>
+   </div>
+
+   <!-- Scores Section -->
+   <div class="student-scores">
+      <h3>Scores in Different Subjects</h3>
+      <table class="score-table">
+         <thead>
+            <tr>
+               <th>Subject</th>
+               <th>Score</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Mathematics</td>
+               <td>98%</td>
+            </tr>
+            <tr>
+               <td>Physics</td>
+               <td>95%</td>
+            </tr>
+            <tr>
+               <td>Computer Science</td>
+               <td>100%</td>
+            </tr>
+            <tr>
+               <td>Chemistry</td>
+               <td>97%</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+
+   <!-- Pie Chart Section -->
+   <div class="chart-container">
+      <canvas id="scoreChart"></canvas>
+   </div>
+
+   <!-- Back Button -->
+   <a href="view-all-scores.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to All Scores</a>
+
+</div>
+
+<footer>
+   &copy; 2024 All Rights Reserved | Student Details
+</footer>
+
+<script>
+   // Data for Pie Chart
+   const data = {
+      labels: ['Mathematics', 'Physics', 'Computer Science', 'Chemistry'],
+      datasets: [{
+         label: 'Subject Scores',
+         data: [98, 95, 100, 97], // The student's scores
+         backgroundColor: ['#FF5733', '#33FF57', '#3357FF', '#FF33A1'], // Colors for each section
+         borderColor: ['#fff', '#fff', '#fff', '#fff'], // Border color for each section
+         borderWidth: 2
+      }]
+   };
+
+   // Config for Pie Chart
+   const config = {
+      type: 'pie',
+      data: data,
+      options: {
+         responsive: true,
+         plugins: {
+            legend: {
+               position: 'top',
+            },
+            tooltip: {
+               callbacks: {
+                  label: function(tooltipItem) {
+                     return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                  }
+               }
+            }
+         }
+      }
+   };
+
+   // Create the Pie Chart
+   const ctx = document.getElementById('scoreChart').getContext('2d');
+   new Chart(ctx, config);
+</script>
+
+</body>
+</html>

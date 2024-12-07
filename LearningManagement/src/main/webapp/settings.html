@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Settings</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <style>
+      body {
+         font-family: 'Arial', sans-serif;
+         background: linear-gradient(135deg, #74ebd5, #9face6);
+         margin: 0;
+         padding: 0;
+      }
+      .header {
+         background: linear-gradient(135deg, #4a4e69, #22223b);
+         padding: 1rem;
+         text-align: center;
+         color: #fff;
+         font-size: 1.5rem;
+         font-weight: bold;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .settings {
+         max-width: 600px;
+         margin: 80px auto;
+         background: #fff;
+         box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+         border-radius: 15px;
+         overflow: hidden;
+         padding: 30px;
+      }
+      .heading {
+         font-size: 2rem;
+         color: #4a4e69;
+         text-align: center;
+         margin-bottom: 20px;
+      }
+      form {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+      label {
+         font-size: 1rem;
+         color: #555;
+      }
+      input[type="text"], input[type="email"] {
+         padding: 12px 15px;
+         font-size: 1rem;
+         border: 2px solid #ddd;
+         border-radius: 8px;
+         width: 100%;
+         transition: all 0.3s ease-in-out;
+      }
+      input[type="text"]:focus, input[type="email"]:focus {
+         border-color: #74ebd5;
+         box-shadow: 0 0 8px rgba(116, 235, 213, 0.5);
+         outline: none;
+      }
+      .btn {
+         padding: 12px;
+         font-size: 1rem;
+         color: #fff;
+         background: linear-gradient(135deg, #6a11cb, #2575fc);
+         border: none;
+         border-radius: 10px;
+         cursor: pointer;
+         font-weight: bold;
+         text-transform: uppercase;
+         transition: all 0.3s ease-in-out;
+      }
+      .btn:hover {
+         background: linear-gradient(135deg, #2575fc, #6a11cb);
+         transform: scale(1.05);
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      footer {
+         text-align: center;
+         color: #fff;
+         font-size: 0.9rem;
+         background-color: #22223b;
+         padding: 10px 0;
+         margin-top: 40px;
+      }
+      .success-box {
+         display: none;
+         margin-top: 20px;
+         padding: 15px;
+         border-radius: 10px;
+         background: #e8f5e9;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         border-left: 5px solid #2ecc71;
+         color: #2ecc71;
+         font-size: 1rem;
+         font-weight: bold;
+         position: relative;
+      }
+      .success-box i {
+         margin-right: 10px;
+      }
+      .success-box span {
+         display: block;
+         font-size: 0.9rem;
+         color: #555;
+      }
+      .close-btn {
+         position: absolute;
+         top: 10px;
+         right: 15px;
+         background: none;
+         border: none;
+         font-size: 1.2rem;
+         color: #555;
+         cursor: pointer;
+      }
+      .close-btn:hover {
+         color: #333;
+      }
+   </style>
+</head>
+<body>
+   <header class="header">
+      Admin Settings Panel
+   </header>
+   <section class="settings">
+      <h1 class="heading">Update Your Settings</h1>
+      <form id="settingsForm">
+         <label for="name">Admin Name:</label>
+         <input type="text" id="name" name="name" value="Admin Name" placeholder="Enter your name" required>
+         <label for="email">Email:</label>
+         <input type="email" id="email" name="email" value="admin@example.com" placeholder="Enter your email" required>
+         <button type="submit" class="btn"><i class="fas fa-save"></i> Save Changes</button>
+      </form>
+      <div id="successBox" class="success-box">
+         <button class="close-btn" onclick="document.getElementById('successBox').style.display = 'none';">
+            <i class="fas fa-times"></i>
+         </button>
+         <i class="fas fa-check-circle"></i> Changes saved successfully!
+         <span id="successDetails"></span>
+      </div>
+   </section>
+   <footer>
+      Admin Panel &copy; 2024 | All Rights Reserved
+   </footer>
+   <script>
+      document.getElementById('settingsForm').addEventListener('submit', function (event) {
+         event.preventDefault(); // Prevent form submission
+         const name = document.getElementById('name').value;
+         const email = document.getElementById('email').value;
+
+         // Display success box
+         const successBox = document.getElementById('successBox');
+         const successDetails = document.getElementById('successDetails');
+         successBox.style.display = 'block';
+         successDetails.textContent = `Name: ${name}, Email: ${email}`;
+
+         // Hide success box after 5 seconds
+         setTimeout(() => {
+            successBox.style.display = 'none';
+         }, 5000);
+      });
+   </script>
+</body>
+</html>

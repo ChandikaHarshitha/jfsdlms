@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reports</title>
+
+   <!-- font awesome cdn link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link -->
+   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+   <section class="flex">
+      <a href="admin-dashboard.html" class="logo">Admin Panel</a>
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+      </div>
+   </section>
+</header>
+
+<div class="side-bar">
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+   <div class="profile">
+      <img src="images/admin-pic.png" class="image" alt="Admin">
+      <h3 class="name">Admin</h3>
+      <p class="role">Administrator</p>
+      <a href="profile.html" class="btn">View Profile</a>
+   </div>
+   <nav class="navbar">
+      <a href="admin-dashboard.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+      <a href="manage-users.html"><i class="fas fa-users"></i><span>Manage Users</span></a>
+      <a href="manage-courses.html"><i class="fas fa-graduation-cap"></i><span>Manage Courses</span></a>
+      <a href="feedback.html"><i class="fas fa-comments"></i><span>Feedback</span></a>
+      <a href="settings.html"><i class="fas fa-cogs"></i><span>Settings</span></a>
+      <a href="reports.html" class="active"><i class="fas fa-chart-bar"></i><span>Reports</span></a>
+   </nav>
+</div>
+
+<section class="reports">
+   <h1 class="heading">Admin Reports</h1>
+   <div class="box-container">
+
+      <div class="box">
+         <i class="fas fa-user"></i>
+         <h3>User Reports</h3>
+         <p>View detailed insights into user activity and registrations.</p>
+         <a href="user-reports.html" class="inline-btn">View Report</a>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-graduation-cap"></i>
+         <h3>Course Reports</h3>
+         <p>Analyze course enrollments, completions, and statistics.</p>
+         <a href="course-reports.html" class="inline-btn">View Report</a>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-file-alt"></i>
+         <h3>Assessment Reports</h3>
+         <p>Track assessment submissions, scores, and trends.</p>
+         <a href="assessment-reports.html" class="inline-btn">View Report</a>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-comments"></i>
+         <h3>Feedback Reports</h3>
+         <p>Gather insights from user feedback and suggestions.</p>
+         <a href="feedback-reports.html" class="inline-btn">View Report</a>
+      </div>
+
+      <div class="box">
+         <i class="fas fa-chart-line"></i>
+         <h3>System Performance</h3>
+         <p>Monitor system performance metrics and uptime.</p>
+         <a href="performance-reports.html" class="inline-btn">View Report</a>
+      </div>
+
+   </div>
+</section>
+
+<footer class="footer">
+   &copy; 2024 by <span>Admin Team</span> | All Rights Reserved!
+</footer>
+
+<!-- custom js file link -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
